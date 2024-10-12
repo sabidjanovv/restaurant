@@ -7,19 +7,22 @@ export type TablesDocument = HydratedDocument<Tables>;
 @Schema({ versionKey: false })
 export class Tables {
   @Prop()
-  number: string;
+  table_name: string;
 
   @Prop()
-  amount: string;
+  capacity: string;
 
   @Prop()
-  qr_code: string;
+  floor: string;
 
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Restourant",
+    ref: 'Restourant',
   })
   restourant_id: Restourant;
+
+  @Prop()
+  qr_code: string;
 }
 
 export const TablesSchema = SchemaFactory.createForClass(Tables);

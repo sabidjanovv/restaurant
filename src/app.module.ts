@@ -6,9 +6,10 @@ import { RestourantModule } from './restourant/restourant.module';
 import { TablesModule } from './tables/tables.module';
 import { MenuModule } from './menu/menu.module';
 import { LanguageModule } from './language/language.module';
-import { CategoriesModule } from './categories/categories.module';
 import { ManagersModule } from './managers/managers.module';
 import { ClientModule } from './client/client.module';
+import { MenuCategoryModule } from './menu_category/menu_category.module';
+import { WaiterModule } from './waiter/waiter.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
@@ -18,9 +19,10 @@ import { ClientModule } from './client/client.module';
     TablesModule,
     MenuModule,
     LanguageModule,
-    CategoriesModule,
     ManagersModule,
     ClientModule,
+    MenuCategoryModule,
+    WaiterModule,
   ],
   controllers: [],
   providers: [],

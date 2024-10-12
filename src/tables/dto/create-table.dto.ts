@@ -1,5 +1,6 @@
 export class CreateTableDto {
-  number: string;
-  amount: string;
+  table_name: string;
+  capacity: string;
+  floor:string;
   restourant_id: string;
 }

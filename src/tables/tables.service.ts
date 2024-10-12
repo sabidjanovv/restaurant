@@ -69,10 +69,10 @@ export class TablesService {
   }
 
   update(id: string, updateTableDto: UpdateTableDto) {
-    return `This action updates a #${id} table`;
+    return this.tablesModel.findByIdAndUpdate(id, updateTableDto, { new: true });
   }
 
   remove(id: string) {
-    return `This action removes a #${id} table`;
+    return this.tablesModel.findByIdAndDelete(id);
   }
 }
