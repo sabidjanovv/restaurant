@@ -5,6 +5,7 @@ import { Restourant, RestourantSchema } from '../restourant/schemas/restourant.s
 import { MongooseModule } from '@nestjs/mongoose';
 import { Menu, MenuSchema } from './schemas/menu.schema';
 import { Language, LanguageSchema } from '../language/schemas/language.schema';
+import { MenuCategory, MenuCategoriesSchema } from '../menu_category/schemas/menu_category.entity';
 
 @Module({
   imports: [
@@ -12,6 +13,10 @@ import { Language, LanguageSchema } from '../language/schemas/language.schema';
       {
         name: Menu.name,
         schema: MenuSchema,
+      },
+      {
+        name: MenuCategory.name,
+        schema: MenuCategoriesSchema,
       },
       {
         name: Restourant.name,

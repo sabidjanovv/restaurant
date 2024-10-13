@@ -3,7 +3,7 @@ import mongoose, { HydratedDocument } from 'mongoose';
 import { Tables } from '../../tables/schemas/table.schema';
 import { Restourant } from '../../restourant/schemas/restourant.schema';
 import { Language } from '../../language/schemas/language.schema';
-import { Category } from '../../categories/schemas/category.schema';
+import { MenuCategory } from '../../menu_category/schemas/menu_category.entity';
 
 export type MenuDocument = HydratedDocument<Menu>;
 
@@ -13,7 +13,7 @@ export class Menu {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Categories',
   })
-  category_id: Category;
+  category_id: MenuCategory;
 
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
