@@ -5,9 +5,9 @@ services:
     container_name: tastetable-app
     build: .
     ports:
-      - "3000:3000"
+      - "3003:3003"  # Updated to match the environment PORT set to 3003
     environment:
-      - PORT=3000
+      - PORT=3003
       - MONGO_URI=mongodb://mongo:27017/taste-table
       - API_URL=http://mongo
       - ACCESS_TOKEN_KEY=MyVeryVeryAccessTokenKey
@@ -17,6 +17,7 @@ services:
       - REFRESH_TIME_MS=84600000
     depends_on:
       - mongo
+    restart: always  # Ensures the app restarts if it crashes
 
   mongo:
     image: mongo:latest
@@ -25,6 +26,7 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
+    restart: always  # Ensures MongoDB restarts if it stops unexpectedly
 
 volumes:
   mongo-data:
